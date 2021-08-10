@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useState } from 'react';
+import Home from './Components/Home';
 
 function App() {
+
+  const [gameList, setGameList] = useState([])
+
+  const grabGames = () => {
+    axios.get('http://localhost:4000/games')
+      .then(res => {
+        console.log(res.data)
+        setGameList(res.data)
+      })
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 class="title">Video Game Log</h1>
+      <Home grabGames = {grabGames} gameList={gameList} />
     </div>
   );
 }

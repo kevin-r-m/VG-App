@@ -286,3 +286,22 @@ textarea {
       border: 2px solid black;
   }
 }
+
+.navContainer{
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 10px;
+}
+
+.navItem{
+  border: 1px solid black;
+  padding: 10px 20px;
+  background-color: #7AF1B7;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.navItem:hover{
+  background-color: #5bca94;
+}

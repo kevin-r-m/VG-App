@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-const Home = ({grabGames, gameList}) => {
+const Home = ({grabGames, gameList, gameDetails}) => {
 
     useEffect(() => {
         grabGames()
@@ -23,8 +24,9 @@ const Home = ({grabGames, gameList}) => {
                             <img src={game.img} alt={game.title} id = 'imgHome'/>
                         </div>
                         <p> Number of reviews: {game.reviews.length}</p>
-                        {/* Needs to be converted to Link */}
-                        {/* <a href="/games/<%= game._id %>" class = 'moreBtn'>More</a> */}
+                        <Link to={`/games/${game._id}`}>
+                            <p class = 'moreBtn'onClick={() => gameDetails(game._id)}>More</p>
+                        </Link>
                     </div>
                 )
             })}

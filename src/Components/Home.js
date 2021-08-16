@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import GameCard from './GameCard'
 
 const Home = ({grabGames, gameList, gameDetails}) => {
 
@@ -16,17 +17,8 @@ const Home = ({grabGames, gameList, gameDetails}) => {
 
             {gameList.map(game => {
                 return(
-                    <div class = 'gamePrev'>
-                        <div class="flexContainer">
-                            <p class = 'titleThumb'> {game.title}</p>
-                        </div>
-                        <div class="flexContainer">
-                            <img src={game.img} alt={game.title} id = 'imgHome'/>
-                        </div>
-                        <p> Number of reviews: {game.reviews.length}</p>
-                        <Link to={`/games/${game._id}`}>
-                            <p class = 'moreBtn'onClick={() => gameDetails(game._id)}>More</p>
-                        </Link>
+                    <div>
+                        <GameCard game={game} gameDetails={gameDetails}/>
                     </div>
                 )
             })}

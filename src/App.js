@@ -5,7 +5,7 @@ import { Route, Link } from 'react-router';
 import Home from './Components/Home';
 import GameDetails from './Components/GameDetails';
 import Nav from './Components/Nav';
-import User from './Components/User'
+import User from './Components/User';
 
 function App() {
 
@@ -22,6 +22,8 @@ function App() {
     description: '',
     createdAt: '',
     updatedAt: '',
+    likes: 5,
+    dislikes: '',
   })
 
 
@@ -44,6 +46,7 @@ function App() {
     axios.get('http://localhost:4000/games')
       .then(res => {
         setGameList(res.data)
+        console.log(res.data)
       })
 
   }

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 // import { Link } from 'react-router-dom'
 import GameCard from './GameCard'
 
-const Home = ({grabGames, gameList, gameDetails}) => {
+const GameList = ({grabGames, gameList, gameDetails}) => {
 
     useEffect(() => {
         grabGames()
@@ -18,7 +18,7 @@ const Home = ({grabGames, gameList, gameDetails}) => {
             {gameList.map(game => {
                 return(
                     <div>
-                        <GameCard game={game} gameDetails={gameDetails}/>
+                        <GameCard key={game._id} game={game} gameDetails={gameDetails}/>
                     </div>
                 )
             })}
@@ -28,4 +28,4 @@ const Home = ({grabGames, gameList, gameDetails}) => {
     )
 }
 
-export default Home
+export default GameList

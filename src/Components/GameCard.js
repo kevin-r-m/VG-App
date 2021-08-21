@@ -17,7 +17,6 @@ const GameCard = ({gameDetails, game}) => {
             {/* <Link to={`/games/${game._id}`}>
                 <p class = 'moreBtn'onClick={() => gameDetails(game._id)}>More</p>
             </Link> */}
-            {console.log(game.likes)}
             <Likes gameLikes={game.likes}/>
         </div>
     )

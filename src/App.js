@@ -2,7 +2,7 @@ import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { Route, Link } from 'react-router';
-import Home from './Components/Home';
+import GameList from './Components/GameList';
 import GameDetails from './Components/GameDetails';
 import Nav from './Components/Nav';
 import User from './Components/User';
@@ -22,7 +22,7 @@ function App() {
     description: '',
     createdAt: '',
     updatedAt: '',
-    likes: 5,
+    likes: '',
     dislikes: '',
   })
 
@@ -65,6 +65,9 @@ function App() {
     axios.put('http://locsalhost:4000/profile/id')
   }
 
+  //Misc Functions
+
+
   return (
     <div className="App">
 
@@ -76,7 +79,7 @@ function App() {
 
         {/* Routing for Home page */}
         <Route exact path='/games'
-          render={routerProps => (<Home grabGames = {grabGames} gameList={gameList} gameDetails={gameDetails}/>)}
+          render={routerProps => (<GameList grabGames = {grabGames} gameList={gameList} gameDetails={gameDetails}/>)}
         />
         
         {/* Routing for Game Detail */}

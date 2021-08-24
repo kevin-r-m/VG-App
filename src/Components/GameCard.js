@@ -1,9 +1,13 @@
 import React from 'react'
-import {Link} from 'react'
+import { useState, useEffect } from 'react'
 import Likes from './Game/Likes'
 
 const GameCard = ({gameDetails, game}) => {
-    console.log(game)
+
+    const [gameCard, setGameCard] = useState(game)
+        
+    const [likes, setLikes] = useState(gameCard.likes)
+
     return (
         <div class = 'gamePrev'>
             <div class="flexContainer">
@@ -17,7 +21,7 @@ const GameCard = ({gameDetails, game}) => {
             {/* <Link to={`/games/${game._id}`}>
                 <p class = 'moreBtn'onClick={() => gameDetails(game._id)}>More</p>
             </Link> */}
-            <Likes gameLikes={game.likes}/>
+            <Likes gameLikes={likes} setLikes={setLikes}/>
         </div>
     )
 }

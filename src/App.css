@@ -1,5 +1,5 @@
 body {
-  background-color: #80F5FF;
+  background-color: #ffffff;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -29,9 +29,9 @@ body {
 
 .button {
   text-decoration: none;
-  background-color: #7AF1B7;
+  background-color: #f5f5f5;
   padding: 5px;
-  border: 2px solid #67d19e;
+  border: 2px solid #000000;
   color: black;
   text-align: center;
 }
@@ -74,9 +74,9 @@ body {
 .title {
   text-align: center;
   display: block;
-  background-color: #7AF1B7;
+  background-color: #f5f5f5;
   padding: 5px;
-  border: 2px solid #67d19e;
+  border: 2px solid #000000;
   margin-top: 10px;
   
 }
@@ -88,7 +88,7 @@ body {
 }
 
 .rTitle {
-  background-color: #7AF1B7;
+  background-color: #f5f5f5;
   width: 100%;
   text-align: center;
   font-weight: 900;
@@ -208,10 +208,10 @@ input {
 }
 
 .titleThumb {
-  background-color: #7AF1B7;
+  background-color: #f5f5f5;
   width: fit-content;
   padding: 5px;
-  border: 2px solid #67d19e;
+  border: 2px solid #000000;
 }
 
 #bump {
@@ -285,4 +285,23 @@ textarea {
       width: 45%;
       border: 2px solid black;
   }
+}
+
+.navContainer{
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 10px;
+}
+
+.navItem{
+  border: 1px solid black;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.navItem:hover{
+  background-color: #bdbdbd;
 }

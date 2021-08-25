@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Likes from './Game/Likes'
 
 const GameCard = ({gameDetails, game}) => {
@@ -15,11 +16,10 @@ const GameCard = ({gameDetails, game}) => {
                 <img src={game.img} alt={game.title} id = 'imgHome'/>
             </div>
             <p> Number of reviews: {game.reviews.length}</p>
-            <p>Internal Id: {game._id}</p>
-            {/* <Link to={`/games/${game._id}`}>
-                <p class = 'moreBtn'onClick={() => gameDetails(game._id)}>More</p>
-            </Link> */}
             <Likes gameCard={gameCard} setGameCard = {setGameCard} key={gameCard._id}/>
+            <Link to={`/games/${game._id}`}>
+                <p class = 'moreBtn'onClick={() => gameDetails(game._id)}>More</p>
+            </Link>
         </div>
     )
 }

@@ -1,22 +1,26 @@
 import React from 'react'
 import TotalLikes from './TotalLikes'
 
-const Likes = ({gameLikes, setLikes}) => {
+const Likes = ({setGameCard, gameCard}) => {
 
     const incrementLikes = () =>{
-        let newLikes = gameLikes
+        let newLikes = gameCard.likes
         newLikes += 1
-        setLikes(newLikes)
+        setGameCard(gameCard => {
+            return{...gameCard, likes: newLikes}
+        })
       }
     const decrementLikes = () =>{
-        let newLikes = gameLikes
+        let newLikes = gameCard.likes
         newLikes -= 1
-        setLikes(newLikes)
+        setGameCard(gameCard => {
+            return{...gameCard, likes: newLikes}
+        })
       }
 
     return (
         <div>
-            <TotalLikes gameLikes={gameLikes}/>
+            <TotalLikes gameLikes={gameCard.likes} key={gameCard._id}/>
             <button onClick={incrementLikes}>+</button>
             <button onClick={decrementLikes}>-</button>
         </div>

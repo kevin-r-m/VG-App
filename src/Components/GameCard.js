@@ -5,8 +5,6 @@ import Likes from './Game/Likes'
 const GameCard = ({gameDetails, game}) => {
 
     const [gameCard, setGameCard] = useState(game)
-        
-    const [likes, setLikes] = useState(gameCard.likes)
 
     return (
         <div class = 'gamePrev'>
@@ -21,7 +19,7 @@ const GameCard = ({gameDetails, game}) => {
             {/* <Link to={`/games/${game._id}`}>
                 <p class = 'moreBtn'onClick={() => gameDetails(game._id)}>More</p>
             </Link> */}
-            <Likes gameLikes={likes} setLikes={setLikes}/>
+            <Likes gameCard={gameCard} setGameCard = {setGameCard} key={gameCard._id}/>
         </div>
     )
 }
